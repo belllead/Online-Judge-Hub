@@ -4,22 +4,22 @@ public class Solution {
 	static int cnt, N;
 	static int[][] snail;
 	static StringBuilder sb = new StringBuilder();	
-	
 
-	public static void main(String[] args) {
-		
+	public static void main(String[] args) {		
 		Scanner sc = new Scanner(System.in);
 		int T = sc.nextInt();
 		
-		for (int testCase=0; testCase<T; testCase++) {
+		for (int tc=1; tc<=T; tc++) {
 			N = sc.nextInt();
 			snail = new int[N][N];
 			
-			sb.append("#" + (testCase+1) + "\n");
+			sb.append("#" + tc + "\n");
 			
 			snailNum(0, 0, N-1, N-1, 1);
 		}
+		
 		System.out.println(sb.toString());
+		sc.close();
 						
 	}
 	
