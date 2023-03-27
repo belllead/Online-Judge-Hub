@@ -6,9 +6,7 @@ public class Solution {
 	static int[][] field;
 	static Scanner sc = new Scanner(System.in);
 	static StringBuilder sb = new StringBuilder();
-
-
-	
+		
 	public static void main(String[] args) {
 		
 		T = sc.nextInt();
@@ -17,18 +15,17 @@ public class Solution {
 		max = 0;
 		
 		for (int tc=1; tc<=T; tc++) {
-			N = sc.nextInt();
-			M = sc.nextInt();
-			
-			chae(tc, N, M);
+			chae(tc);
 		}
 		
 		System.out.println(sb);
-		
+		sc.close();		
 	}
 	
 	
-	public static void chae(int testCase, int N, int M) {
+	public static void chae(int testCase) {
+		N = sc.nextInt();
+		M = sc.nextInt();
 		
 		field = new int[N][N];
 		
