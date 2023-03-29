@@ -34,10 +34,6 @@ public class Solution {
 				}
 			}
 			
-//			for (int[] p : pCoord)
-//				System.out.println(Arrays.toString(p));
-//			for (int[] s : sCoord)
-//				System.out.println(Arrays.toString(s));
 			// 입력 완료
 			
 			int min = Integer.MAX_VALUE;
@@ -51,16 +47,6 @@ public class Solution {
 						pCoord1.add(pCoord.get(j));
 					} else pCoord2.add(pCoord.get(j));
 				}
-				
-//				System.out.println();
-//				for (int[] p1: pCoord1)
-//					System.out.print(Arrays.toString(p1));
-//				System.out.println();
-//				for (int[] p2: pCoord2)
-//					System.out.print(Arrays.toString(p2));
-//				System.out.println();
-//				System.out.println(Arrays.toString(sCoord[0]));
-//				System.out.println(Arrays.toString(sCoord[1]));
 				
 				// 사람을 두 그룹으로 나눔
 				// 여기서 각각 계단으로 보내주어 계산하면 됨
@@ -85,23 +71,7 @@ public class Solution {
 					}
 				}
 				
-//				System.out.println();
-//				System.out.println(dist1);
-//				System.out.println(dist2);
-//				
-//				System.out.println();
-//				int t1 = getSecond(dist1, sCoord[0]);
-//				int t2 = getSecond(dist2, sCoord[1]);
-//				System.out.println(t1);
-//				System.out.println(t2);
-//				System.out.println();
-//				int max = Math.max(t1, t2);
-//				System.out.println(max);
-//				min = Math.min(min, max);
-//				System.out.println(Math.max(getSecond(dist1, sCoord[0]), getSecond(dist2, sCoord[1])));
 				min = Math.min(min, (Math.max(getSecond(dist1, sCoord[0]), getSecond(dist2, sCoord[1]))));
-				
-//				System.out.println();System.out.println();
 			}
 			
 			sb.append("#" + tc + " ");
@@ -146,7 +116,6 @@ public class Solution {
 					}
 				}
 			}
-//			System.out.println(stairCnt);
 		}
 		
 		return second + 1;
