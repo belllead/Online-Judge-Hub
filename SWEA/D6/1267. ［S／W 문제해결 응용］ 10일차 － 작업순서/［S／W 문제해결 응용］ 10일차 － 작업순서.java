@@ -43,15 +43,15 @@ public class Solution {
 			
 			sb.append("#" + tc + " ");
 			
-			topoQ();
+//			topoQ();
 			
 			for (int i=1; i<V+1; i++) {
 				if (!visited[i] && inDegree[i] == 0)
 					topoS(i);
 			}
 			
-//			while (!stack.isEmpty())
-//				sb.append(stack.pop() + " ");
+			while (!stack.isEmpty())
+				sb.append(stack.pop() + " ");
 			
 			sb.append("\n");
 		}
