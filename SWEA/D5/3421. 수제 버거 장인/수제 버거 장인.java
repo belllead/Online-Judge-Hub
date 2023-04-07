@@ -26,7 +26,6 @@ public class Solution {
 				for (int ex=0; ex<M; ex++) {
 					if ((i & exclude[ex]) == exclude[ex]) continue outer;
 				}
-				
 				cnt++;
 			}
 
