@@ -1,51 +1,27 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
+	static final int INF = 9876543;
+	
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
-		int ans = 0;
-		List<Integer> sugarBag = new ArrayList<>();
 		
-		if(N<=7) {
-			switch(N) {
-			case 1:
-				ans = -1;
-				break;
-			case 2:
-				ans = -1;
-				break;
-			case 3:
-				ans = 1;
-				break;
-			case 4: 
-				ans = -1;
-				break;
-			case 5:
-				ans = 1;
-				break;
-			case 6:
-				ans = 2;
-				break;
-			case 7:
-				ans = -1;
-			}
-		} else {
-			outer: for (int b=0; b<=N/3+1; b++) {
-				for (int a=0; a<=N/5+1; a++) {
-					if ((5*a + 3*b) == N) {
-						ans = a+b;
-						break outer;
-					}
-				}
-			}
+		int[] dp = new int[N+1];
+		dp[0] = 0;
+		dp[1] = 0;
+		dp[2] = 0;
+
+		for (int i=3; i<N+1; i++) {
+			int t3 = i % 3 == 0 ? i / 3 : INF;
+			int t5 = i % 5 == 0 ? i / 5 : INF;
+			int d3 = i > 6 ? dp[i-3] + 1 : INF;
+			int d5 = i > 10 ? dp[i-5] + 1 : INF;
+			
+			dp[i] = Math.min(t3, Math.min(t5, Math.min(d3, d5)));
 		}
 		
-	
-		System.out.println(ans);
-		sc.close();
+		System.out.println(dp[N] == INF ? -1 : dp[N]);
 	}
 }
